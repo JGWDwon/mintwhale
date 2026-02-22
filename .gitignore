@@ -1,0 +1,6 @@
+# 모든 파일 무시
+*
+# docs/ 폴더만 추적 (GitHub Pages용)
+!docs/
+!docs/**
+!.gitignore

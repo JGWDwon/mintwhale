@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📈 ISC - 종목 분석</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg:#f8f7f4;--card:#fff;--buy:#1a73e8;--buy-bg:#e8f0fe;--sell:#d93025;--sell-bg:#fce8e6;--hold:#e67e22;--hold-bg:#fef7e0;--info:#6b7280;--info-bg:#f3f4f6;--dark:#1a1a1a;--body:#333;--sub:#666;--light:#999;--border:#e5e5e0;--radius:16px }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--body);line-height:1.75}
+        .header{background:#fff;border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+        .header-inner{max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+        .header h1{font-size:1.3rem;font-weight:800}
+        .back-link{color:var(--light);text-decoration:none;font-size:.85rem}
+        .container{max-width:720px;margin:0 auto;padding:20px 14px}
+        .overview{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:20px;text-align:center}
+        .stock-title{font-size:1.8rem;font-weight:900;color:var(--dark);margin-bottom:4px}
+        .mention-count{font-size:.9rem;color:var(--sub);margin-bottom:16px}
+        .sentiment-bar-wrap{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .sentiment-chip{padding:8px 20px;border-radius:12px;font-weight:700;font-size:.95rem}
+        .sentiment-chip.buy-c{background:var(--buy-bg);color:var(--buy)}
+        .sentiment-chip.sell-c{background:var(--sell-bg);color:var(--sell)}
+        .sentiment-chip.hold-c{background:var(--hold-bg);color:var(--hold)}
+        .verdict{margin-top:16px;font-size:1.15rem;font-weight:800;padding:10px 20px;border-radius:10px;display:inline-block}
+        .verdict.bullish{background:var(--buy-bg);color:var(--buy)}
+        .verdict.bearish{background:var(--sell-bg);color:var(--sell)}
+        .verdict.neutral{background:var(--hold-bg);color:var(--hold)}
+        .timeline-title{font-size:1rem;font-weight:700;color:var(--dark);margin:24px 0 12px;padding-left:8px;border-left:4px solid var(--buy)}
+        .tl-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden}
+        .tl-top{padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+        .tl-top.buy{border-left:4px solid var(--buy)}.tl-top.sell{border-left:4px solid var(--sell)}.tl-top.hold{border-left:4px solid var(--hold)}.tl-top.info{border-left:4px solid var(--info)}
+        .tl-dir{font-weight:800;font-size:.95rem}.tl-dir.buy{color:var(--buy)}.tl-dir.sell{color:var(--sell)}.tl-dir.hold{color:var(--hold)}.tl-dir.info{color:var(--info)}
+        .tl-date{font-size:.78rem;color:var(--light)}
+        .tl-role{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:8px;margin-left:6px}
+        .tl-role.primary{background:var(--buy-bg);color:var(--buy)}.tl-role.secondary{background:var(--info-bg);color:var(--sub)}
+        .tl-summary{padding:0 16px 12px;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.6}
+        .tl-detail{padding:0 16px 12px;font-size:.88rem;color:var(--sub);line-height:1.8}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <h1>📈 ISC</h1>
+            <a href="index.html" class="back-link">← 브리핑으로</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="overview">
+            <div class="stock-title">ISC</div>
+            <div class="mention-count">총 15회 언급 · 주역 7회</div>
+            <div class="sentiment-bar-wrap"><span class="sentiment-chip buy-c">📈 매수 7</span></div>
+            <div class="verdict bullish">📈 종합 판단: 매수 우세 (100%)</div>
+        </div>
+        <div class="timeline-title">📅 분석 타임라인</div>
+        
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-21 18:45</span>
+            </div>
+            <div class='tl-summary'>4월 반도체 대박 파티 전, 지금이 마지막 매수 기회입니다</div>
+            <div class='tl-detail'>지금 반도체 시장은 마치 명품 가방이 없어서 못 파는 상황과 같습니다. 특히 AI라는 큰 유행 덕분에 부품 만드는 회사(소부장)들이 먼저 돈을 쓸어담고 있어요. 이 회사들 주가가 확 오를 때 팔아서, 결국 가장 큰 주인인 'SK하이닉스' 지분을 늘려가는 것이 이번 투자의 핵심 비법입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-21 11:45</span>
+            </div>
+            <div class='tl-summary'>못 오른 주식(네이버) 대신 진짜 대장주(반도체 소부장)를 잡으세요</div>
+            <div class='tl-detail'>식당 줄이 길다고 옆에 파리 날리는 집 가면 결국 후회합니다. 지금 주식시장도 줄 서서 기다리는 맛집(반도체)이 돈을 쓸어담고 있어요. 이름만 유명한 네이버보다, 반도체 만드는 데 꼭 필요한 '숨은 맛집' 같은 부품 회사들이 마진(남는 돈)도 훨씬 많고 주가도 잘 오릅니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-20 19:45</span>
+            </div>
+            <div class='tl-summary'>AI 대장주와 현대차 꽉 잡고, 딴 데 눈 돌리지 마세요</div>
+            <div class='tl-detail'>지금 우리는 큰 강물이 흐르는 길목에 이미 자리를 아주 잘 잡고 있습니다. 괜히 옆에 작은 도랑(새로운 테마) 생겼다고 자리 옮기지 마세요. 지금 들고 있는 '명품 반도체 부품'들과 '보너스(배당) 듬뿍 주는 현대차'가 결국 우리에게 가장 큰 돈을 가져다줄 효자들입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-20 15:41</span>
+            </div>
+            <div class='tl-summary'>하이닉스로 큰 수익! 반도체 대장주가 답입니다</div>
+            <div class='tl-detail'>우량주 위주로 장바구니를 잘 채워둬서 통장이 빵빵해진 모습입니다. 특히 하이닉스와 ISC 같은 반도체 종목들이 돈을 아주 잘 벌어다 주고 있어요. 마이너스 난 종목이 거의 없을 정도로 아주 건강한 상태입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 15:26</span>
+            </div>
+            <div class='tl-summary'>테슬라 같은 '꿈'보다 하이닉스 같은 '실속'을 챙기세요</div>
+            <div class='tl-detail'>테슬라는 '나중에 하늘 나는 자동차 만들게'라고 약속하며 돈을 빌리는 친구와 같습니다. 그런데 나라에서 '하늘 길 금지'라고 하니 그 친구의 약속이 거짓말이 될 위기인 거죠. 반면 SK하이닉스나 엔비디아는 지금 당장 집 짓는 데 꼭 필요한 '벽돌과 시멘트'를 파는 가게입니다. 꿈만 먹고 사는 주식보다 지금 당장 물건이 없어서 못 파는 주식을 들고 있어야 안전합니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 13:41</span>
+            </div>
+            <div class='tl-summary'>SK하이닉스로 1,800만원 수익! 반도체가 정답입니다</div>
+            <div class='tl-detail'>튼튼한 1등 기업(SK하이닉스)이라는 나무를 심고 진득하게 기다렸더니 1,800만 원이라는 큰 열매가 열린 상황입니다. 중간에 팔지 않고 좋은 주식을 꽉 잡고 있는 것이 돈 버는 가장 쉬운 방법임을 보여줍니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 13:18</span>
+            </div>
+            <div class='tl-summary'>수익 난 하이닉스 팔아 알짜 주식 쇼핑 완료!</div>
+            <div class='tl-detail'>잘 나가는 큰 형님(하이닉스)이 번 돈으로, 실력은 좋은데 잠시 쉬고 있는 동생들(부품주) 옷을 사준 격입니다. 큰 형님은 여전히 든든하게 자리를 지키고 있고, 동생들은 이제 막 달릴 준비를 마쳤네요. 비쌀 때 팔고 쌀 때 사는 주식의 정석을 보여주는 아주 건강한 계좌입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 11:03</span>
+            </div>
+            <div class='tl-summary'>안 오르는 주식 팔고 대박 후보로 교체 완료!</div>
+            <div class='tl-detail'>정원에 시든 꽃(STI)은 뽑아버리고, 싱싱하고 튼튼한 새 꽃(TCK, TSE)을 심은 거예요. 이미 우리 마당에는 하이닉스라는 거대한 나무가 돈을 듬뿍 벌어다 주고 있죠. 이제 다음 주에 비(엔비디아 실적 발표)만 내리면 새로 심은 꽃들이 활짝 필 테니, 주말 동안은 걱정 말고 푹 쉬라는 뜻입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 09:52</span>
+            </div>
+            <div class='tl-summary'>티에스이, 지금 하락은 더 살 수 있는 절호의 찬스!</div>
+            <div class='tl-detail'>마라톤 선수가 너무 빨리 달리다가 잠시 숨을 고르며 물 한 잔 마시는 상황입니다. 주가가 너무 급하게 올라서 잠시 쉬어가는 것일 뿐, 회사가 망하거나 큰 문제가 생긴 게 아니에요. 백화점 세일 기간처럼 좋은 주식을 싸게 살 기회가 온 것이니 겁먹을 필요 없습니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 07:45</span>
+            </div>
+            <div class='tl-summary'>TSMC와 하이닉스 꽉 잡고 느긋하게 돈 벌자</div>
+            <div class='tl-detail'>TSMC가 공장을 짓는 건 이미 손님(엔비디아)이 돈을 다 내고 주문을 마쳤다는 뜻이에요. 식당으로 치면 이미 단체 예약 손님이 꽉 차서 가게를 넓히는 격이라 절대 망할 일이 없습니다. 하이닉스의 메모리와 TSMC의 기술이 합쳐져야 AI 칩이 만들어지니, 이 두 회사는 지금 세상에서 가장 귀한 몸입니다. 전력과 통신 종목까지 챙겨뒀으니 그냥 그물 쳐놓고 기다리기만 하면 됩니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-20 07:34</span>
+            </div>
+            <div class='tl-summary'>대만 공장 풀가동 중! 엔비디아·하이닉스 더 갑니다</div>
+            <div class='tl-detail'>식당에 손님이 얼마나 올지 궁금할 때, 식당에 식재료 납품하는 트럭이 몇 대인지 보면 정확하죠? 지금 엔비디아(식당)에 서버 박스(식재료)를 만들어 보내는 대만 공장들이 밤새 가동될 정도로 주문이 밀려있습니다. 이건 곧 엔비디아와 그 부품을 만드는 하이닉스 같은 회사들이 돈을 쓸어 담고 있다는 확실한 증거입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-19 12:56</span>
+            </div>
+            <div class='tl-summary'>안 오르는 주식 팔고, 잘 나가는 놈으로 갈아타기!</div>
+            <div class='tl-detail'>축구팀 감독이 컨디션 안 좋은 선수(STI)를 빼고, 지금 제일 골을 잘 넣는 공격수(티씨케이, 티에스이)를 더 투입한 상황입니다. 1등 선수(하이닉스)는 그대로 두면서 팀 전체를 더 공격적으로 바꾼 아주 영리한 작전이에요. 이제 새로 들어온 선수들이 얼마나 점수를 내는지 지켜보기만 하면 됩니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-19 12:50</span>
+            </div>
+            <div class='tl-summary'>반도체 대장주 하나만 잘 잡아도 계좌가 바뀝니다</div>
+            <div class='tl-detail'>동네에서 제일 장사 잘되는 1등 가게(SK하이닉스) 주식을 사서 가만히 놔뒀더니 돈이 복사가 됐습니다. 여기저기 조금씩 사는 것보다 확실한 놈 하나를 꽉 잡고 있는 게 비결이에요. 내 지갑이 30%나 빵빵해진 걸 보니 역시 반도체가 효자입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-19 12:06</span>
+            </div>
+            <div class='tl-summary'>삼성보다 하이닉스가 진짜 대장주니 꽉 잡으세요</div>
+            <div class='tl-detail'>명품 가방으로 비유하면, 하이닉스는 줄 서서 사는 '에르메스'고 삼성은 어디서나 보이는 '일반 브랜드'가 된 상황입니다. 뉴스에서는 둘 다 잘 팔린다고 하지만, 진짜 돈을 긁어모으는 건 기술력이 훨씬 앞선 하이닉스입니다. 남들이 삼성전자 뉴스에 흔들릴 때, 우리는 진짜 알짜배기인 하이닉스를 꽉 쥐고 있으면 됩니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-19 11:00</span>
+            </div>
+            <div class='tl-summary'>외국인이 사주는 불장입니다, 팔지 말고 수익 즐기세요</div>
+            <div class='tl-detail'>지금 주식 시장은 마치 백화점 명품 세일 날에 큰손들이 몰려와서 물건을 싹쓸이하는 것과 같습니다. 반도체나 자동차 같은 좋은 주식들을 외국인들이 비싼 값에 사주고 있으니, 우리는 그냥 가만히 앉아서 구경만 해도 돈이 벌리는 상황이에요. 괜히 불안해서 중간에 팔지 말고, 오늘은 주식 앱 끄고 맛있는 거 드시면서 여유를 즐기시면 됩니다.</div>
+        </div>
+    </div>
+</body>
+</html>

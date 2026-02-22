@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📈 알파벳 - 종목 분석</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg:#f8f7f4;--card:#fff;--buy:#1a73e8;--buy-bg:#e8f0fe;--sell:#d93025;--sell-bg:#fce8e6;--hold:#e67e22;--hold-bg:#fef7e0;--info:#6b7280;--info-bg:#f3f4f6;--dark:#1a1a1a;--body:#333;--sub:#666;--light:#999;--border:#e5e5e0;--radius:16px }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--body);line-height:1.75}
+        .header{background:#fff;border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+        .header-inner{max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+        .header h1{font-size:1.3rem;font-weight:800}
+        .back-link{color:var(--light);text-decoration:none;font-size:.85rem}
+        .container{max-width:720px;margin:0 auto;padding:20px 14px}
+        .overview{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:20px;text-align:center}
+        .stock-title{font-size:1.8rem;font-weight:900;color:var(--dark);margin-bottom:4px}
+        .mention-count{font-size:.9rem;color:var(--sub);margin-bottom:16px}
+        .sentiment-bar-wrap{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .sentiment-chip{padding:8px 20px;border-radius:12px;font-weight:700;font-size:.95rem}
+        .sentiment-chip.buy-c{background:var(--buy-bg);color:var(--buy)}
+        .sentiment-chip.sell-c{background:var(--sell-bg);color:var(--sell)}
+        .sentiment-chip.hold-c{background:var(--hold-bg);color:var(--hold)}
+        .verdict{margin-top:16px;font-size:1.15rem;font-weight:800;padding:10px 20px;border-radius:10px;display:inline-block}
+        .verdict.bullish{background:var(--buy-bg);color:var(--buy)}
+        .verdict.bearish{background:var(--sell-bg);color:var(--sell)}
+        .verdict.neutral{background:var(--hold-bg);color:var(--hold)}
+        .timeline-title{font-size:1rem;font-weight:700;color:var(--dark);margin:24px 0 12px;padding-left:8px;border-left:4px solid var(--buy)}
+        .tl-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden}
+        .tl-top{padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+        .tl-top.buy{border-left:4px solid var(--buy)}.tl-top.sell{border-left:4px solid var(--sell)}.tl-top.hold{border-left:4px solid var(--hold)}.tl-top.info{border-left:4px solid var(--info)}
+        .tl-dir{font-weight:800;font-size:.95rem}.tl-dir.buy{color:var(--buy)}.tl-dir.sell{color:var(--sell)}.tl-dir.hold{color:var(--hold)}.tl-dir.info{color:var(--info)}
+        .tl-date{font-size:.78rem;color:var(--light)}
+        .tl-role{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:8px;margin-left:6px}
+        .tl-role.primary{background:var(--buy-bg);color:var(--buy)}.tl-role.secondary{background:var(--info-bg);color:var(--sub)}
+        .tl-summary{padding:0 16px 12px;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.6}
+        .tl-detail{padding:0 16px 12px;font-size:.88rem;color:var(--sub);line-height:1.8}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <h1>📈 알파벳</h1>
+            <a href="index.html" class="back-link">← 브리핑으로</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="overview">
+            <div class="stock-title">알파벳</div>
+            <div class="mention-count">총 4회 언급 · 주역 1회</div>
+            <div class="sentiment-bar-wrap"><span class="sentiment-chip buy-c">📈 매수 1</span></div>
+            <div class="verdict bullish">📈 종합 판단: 매수 우세 (100%)</div>
+        </div>
+        <div class="timeline-title">📅 분석 타임라인</div>
+        
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-22 07:29</span>
+            </div>
+            <div class='tl-summary'>빅테크가 AI에 돈 쓸수록 하이닉스는 돈벼락 맞는다</div>
+            <div class='tl-detail'>부자 동네(빅테크)가 미래 먹거리를 위해 새 공장을 짓느라 돈을 많이 쓴다고 발표했어요. 남들은 돈 많이 쓴다고 걱정하며 주식을 팔지만, 사실 그 공장에 들어갈 핵심 부품(반도체)을 만드는 우리 집(하이닉스)은 앞으로 돈을 쓸어 담게 됩니다. 세계 최고의 투자 전문가도 '이건 박수 칠 일'이라고 하니, 겁먹지 말고 우리 주식 잘 들고 가자는 뜻입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-21 09:17</span>
+            </div>
+            <div class='tl-summary'>엔비디아 실적 발표, 하이닉스와 함께 꽉 잡고 가세요</div>
+            <div class='tl-detail'>트럼프 대통령의 말 한마디보다 엔비디아 사장님이 보여줄 진짜 장사 밑천이 더 중요합니다. 지금 엔비디아는 1년치 예약이 꽉 찬 맛집이고, 우리 하이닉스는 그 맛집에 독점으로 재료를 대는 핵심 파트너입니다. 다음 주에 사람들이 '이제 먹을 만큼 먹었다'며 주식을 팔아 주가가 잠깐 떨어질 수 있지만, 장사가 여전히 잘되는 걸 확인했다면 겁먹고 팔 이유가 전혀 없습니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-21 09:08</span>
+            </div>
+            <div class='tl-summary'>스마트폰은 AI 덕분에 돈을 더 잘 버는 '현금 복사기'입니다</div>
+            <div class='tl-detail'>요즘 핸드폰 안 바꾼다고 걱정하시죠? 그런데 이제는 폰 하나 팔 때 남는 마진이 예전보다 훨씬 커졌어요. 애플은 폰 판 뒤에도 매달 우리한테 서비스 이용료를 받아가고, 하이닉스는 AI 폰에 들어가는 비싼 부품을 독점하듯 팔고 있거든요. 결국 폰은 AI 시대의 가장 중요한 입구라서, 이 동네 대장주들은 앞으로도 돈을 쓸어담을 수밖에 없습니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-19 16:29</span>
+            </div>
+            <div class='tl-summary'>역대급 불장 강림! 반도체 대장주 꽉 잡고 가세요</div>
+            <div class='tl-detail'>오늘 주식 시장은 한마디로 '대박'이 터졌습니다. AI 열풍과 미국 시장의 훈풍 덕분에 삼성전자와 하이닉스 같은 우량주들이 시장을 끌어올렸고, 외국인들도 돈따발을 들고 한국 주식을 사러 몰려왔어요. 주가가 떨어질 거라 예상했던 사람들(숏 세력)이 항복하고 주식을 다시 사면서 상승세가 더 가팔라진 '역사적인 날'입니다.</div>
+        </div>
+    </div>
+</body>
+</html>

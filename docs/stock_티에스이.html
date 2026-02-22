@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📈 티에스이 - 종목 분석</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg:#f8f7f4;--card:#fff;--buy:#1a73e8;--buy-bg:#e8f0fe;--sell:#d93025;--sell-bg:#fce8e6;--hold:#e67e22;--hold-bg:#fef7e0;--info:#6b7280;--info-bg:#f3f4f6;--dark:#1a1a1a;--body:#333;--sub:#666;--light:#999;--border:#e5e5e0;--radius:16px }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--body);line-height:1.75}
+        .header{background:#fff;border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+        .header-inner{max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+        .header h1{font-size:1.3rem;font-weight:800}
+        .back-link{color:var(--light);text-decoration:none;font-size:.85rem}
+        .container{max-width:720px;margin:0 auto;padding:20px 14px}
+        .overview{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:20px;text-align:center}
+        .stock-title{font-size:1.8rem;font-weight:900;color:var(--dark);margin-bottom:4px}
+        .mention-count{font-size:.9rem;color:var(--sub);margin-bottom:16px}
+        .sentiment-bar-wrap{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .sentiment-chip{padding:8px 20px;border-radius:12px;font-weight:700;font-size:.95rem}
+        .sentiment-chip.buy-c{background:var(--buy-bg);color:var(--buy)}
+        .sentiment-chip.sell-c{background:var(--sell-bg);color:var(--sell)}
+        .sentiment-chip.hold-c{background:var(--hold-bg);color:var(--hold)}
+        .verdict{margin-top:16px;font-size:1.15rem;font-weight:800;padding:10px 20px;border-radius:10px;display:inline-block}
+        .verdict.bullish{background:var(--buy-bg);color:var(--buy)}
+        .verdict.bearish{background:var(--sell-bg);color:var(--sell)}
+        .verdict.neutral{background:var(--hold-bg);color:var(--hold)}
+        .timeline-title{font-size:1rem;font-weight:700;color:var(--dark);margin:24px 0 12px;padding-left:8px;border-left:4px solid var(--buy)}
+        .tl-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden}
+        .tl-top{padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+        .tl-top.buy{border-left:4px solid var(--buy)}.tl-top.sell{border-left:4px solid var(--sell)}.tl-top.hold{border-left:4px solid var(--hold)}.tl-top.info{border-left:4px solid var(--info)}
+        .tl-dir{font-weight:800;font-size:.95rem}.tl-dir.buy{color:var(--buy)}.tl-dir.sell{color:var(--sell)}.tl-dir.hold{color:var(--hold)}.tl-dir.info{color:var(--info)}
+        .tl-date{font-size:.78rem;color:var(--light)}
+        .tl-role{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:8px;margin-left:6px}
+        .tl-role.primary{background:var(--buy-bg);color:var(--buy)}.tl-role.secondary{background:var(--info-bg);color:var(--sub)}
+        .tl-summary{padding:0 16px 12px;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.6}
+        .tl-detail{padding:0 16px 12px;font-size:.88rem;color:var(--sub);line-height:1.8}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <h1>📈 티에스이</h1>
+            <a href="index.html" class="back-link">← 브리핑으로</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="overview">
+            <div class="stock-title">티에스이</div>
+            <div class="mention-count">총 11회 언급 · 주역 8회</div>
+            <div class="sentiment-bar-wrap"><span class="sentiment-chip buy-c">📈 매수 7</span></div>
+            <div class="verdict bullish">📈 종합 판단: 매수 우세 (100%)</div>
+        </div>
+        <div class="timeline-title">📅 분석 타임라인</div>
+        
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-22 11:40</span>
+            </div>
+            <div class='tl-summary'>반도체 대장주, 정해진 세일 가격 오면 줍줍하세요!</div>
+            <div class='tl-detail'>명품 가방(우량주)이 평소엔 비싸서 못 사지만, 가끔 백화점에서 깜짝 세일(가격 조정)을 할 때가 있습니다. 우리는 그 세일 기간과 가격을 미리 계산해둔 거예요. 하이닉스가 90만원까지 내려오는 건 물건에 하자가 있어서가 아니라, 잠시 숨을 고르는 것이니 그때가 바로 '득템'할 기회라는 뜻입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보 공유</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-20 21:24</span>
+            </div>
+            <div class='tl-summary'>4월에 들어올 짭짤한 보너스, 배당금 확인하세요</div>
+            <div class='tl-detail'>주식은 단순히 싸게 사서 비싸게 파는 것뿐만 아니라, 가지고만 있어도 회사가 '고생했다'며 보너스(배당금)를 줍니다. 마치 월세 받는 건물주처럼, 내 통장에 현금이 자동으로 꽂히는 재미를 느끼는 것이 주식 투자의 진짜 매력입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-20 16:10</span>
+            </div>
+            <div class='tl-summary'>가짜 하락에 속지 마세요, 반도체 대장주는 결국 갑니다!</div>
+            <div class='tl-detail'>맛집(종목)에 손님이 줄어든 게 아니라, 오늘 동네에 비가 와서 잠시 사람이 없는 것뿐입니다. 주식을 빌려 파는 나쁜 세력들은 매일 이자를 내야 해서 마음이 급하지만, 우리는 우리 돈으로 샀으니 느긋하게 기다리면 됩니다. 반도체 공장이 계속 지어지고 있으니 여기에 들어가는 소모품과 장비는 결국 불티나게 팔릴 수밖에 없습니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 15:41</span>
+            </div>
+            <div class='tl-summary'>하이닉스로 큰 수익! 반도체 대장주가 답입니다</div>
+            <div class='tl-detail'>우량주 위주로 장바구니를 잘 채워둬서 통장이 빵빵해진 모습입니다. 특히 하이닉스와 ISC 같은 반도체 종목들이 돈을 아주 잘 벌어다 주고 있어요. 마이너스 난 종목이 거의 없을 정도로 아주 건강한 상태입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 13:41</span>
+            </div>
+            <div class='tl-summary'>SK하이닉스로 1,800만원 수익! 반도체가 정답입니다</div>
+            <div class='tl-detail'>튼튼한 1등 기업(SK하이닉스)이라는 나무를 심고 진득하게 기다렸더니 1,800만 원이라는 큰 열매가 열린 상황입니다. 중간에 팔지 않고 좋은 주식을 꽉 잡고 있는 것이 돈 버는 가장 쉬운 방법임을 보여줍니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-20 09:52</span>
+            </div>
+            <div class='tl-summary'>티에스이, 지금 하락은 더 살 수 있는 절호의 찬스!</div>
+            <div class='tl-detail'>마라톤 선수가 너무 빨리 달리다가 잠시 숨을 고르며 물 한 잔 마시는 상황입니다. 주가가 너무 급하게 올라서 잠시 쉬어가는 것일 뿐, 회사가 망하거나 큰 문제가 생긴 게 아니에요. 백화점 세일 기간처럼 좋은 주식을 싸게 살 기회가 온 것이니 겁먹을 필요 없습니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-19 15:49</span>
+            </div>
+            <div class='tl-summary'>공매도 세력 항복 직전! 내일 아침 주가 폭등 열차 출발합니다</div>
+            <div class='tl-detail'>나쁜 마음 먹고 주가 떨어지라고 빌던 사람들이 지금 큰 손해를 보고 있습니다. 이 사람들은 더 망하지 않으려면 내일 아침에 비싼 가격이라도 주식을 강제로 사서 갚아야 합니다. 안 그래도 오르는 주식에 이 사람들이 '사자' 주문까지 보태니, 주가는 로켓 엔진을 단 것처럼 더 높이 날아갈 수밖에 없는 상황입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-19 14:32</span>
+            </div>
+            <div class='tl-summary'>금리 걱정은 쇼일 뿐, AI 실적 믿고 6월까지 홀딩하세요</div>
+            <div class='tl-detail'>지금 시장이 금리 때문에 시끄러운 건, 나중에 새로 올 반장(케빈 워시)이 금리를 내려주며 '영웅'처럼 등장하게 하려고 미리 분위기를 잡는 거예요. 옆집(엔비디아, 메타) 애들이 공부(실적)를 너무 잘해서 동네 분위기도 결국 좋아질 수밖에 없습니다. 6월에 새 반장이 올 때까지는 중간에 좀 시끄러워도 엉덩이 무겁게 앉아 있는 사람이 이기는 게임입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-19 13:52</span>
+            </div>
+            <div class='tl-summary'>큰손들이 찜한 티씨케이와 티에스이, 지금은 꽉 잡을 때!</div>
+            <div class='tl-detail'>티씨케이는 지금 동네 맛집에 현지인과 관광객이 모두 줄을 서서 번호표 뽑는 상황이라 아주 튼튼합니다. 티에스이는 시끄러운 구경꾼들은 떠나고 진짜 돈 많은 큰손들이 조용히 물건을 싹쓸이하고 있어서 가격이 오르는 중이에요. 결론적으로 두 종목 모두 '진짜 부자'들이 사고 있으니 걱정 말고 믿고 가시면 됩니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-19 12:56</span>
+            </div>
+            <div class='tl-summary'>안 오르는 주식 팔고, 잘 나가는 놈으로 갈아타기!</div>
+            <div class='tl-detail'>축구팀 감독이 컨디션 안 좋은 선수(STI)를 빼고, 지금 제일 골을 잘 넣는 공격수(티씨케이, 티에스이)를 더 투입한 상황입니다. 1등 선수(하이닉스)는 그대로 두면서 팀 전체를 더 공격적으로 바꾼 아주 영리한 작전이에요. 이제 새로 들어온 선수들이 얼마나 점수를 내는지 지켜보기만 하면 됩니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-19 12:50</span>
+            </div>
+            <div class='tl-summary'>반도체 대장주 하나만 잘 잡아도 계좌가 바뀝니다</div>
+            <div class='tl-detail'>동네에서 제일 장사 잘되는 1등 가게(SK하이닉스) 주식을 사서 가만히 놔뒀더니 돈이 복사가 됐습니다. 여기저기 조금씩 사는 것보다 확실한 놈 하나를 꽉 잡고 있는 게 비결이에요. 내 지갑이 30%나 빵빵해진 걸 보니 역시 반도체가 효자입니다.</div>
+        </div>
+    </div>
+</body>
+</html>

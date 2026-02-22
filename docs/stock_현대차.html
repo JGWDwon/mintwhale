@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📈 현대차 - 종목 분석</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg:#f8f7f4;--card:#fff;--buy:#1a73e8;--buy-bg:#e8f0fe;--sell:#d93025;--sell-bg:#fce8e6;--hold:#e67e22;--hold-bg:#fef7e0;--info:#6b7280;--info-bg:#f3f4f6;--dark:#1a1a1a;--body:#333;--sub:#666;--light:#999;--border:#e5e5e0;--radius:16px }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--body);line-height:1.75}
+        .header{background:#fff;border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+        .header-inner{max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+        .header h1{font-size:1.3rem;font-weight:800}
+        .back-link{color:var(--light);text-decoration:none;font-size:.85rem}
+        .container{max-width:720px;margin:0 auto;padding:20px 14px}
+        .overview{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:20px;text-align:center}
+        .stock-title{font-size:1.8rem;font-weight:900;color:var(--dark);margin-bottom:4px}
+        .mention-count{font-size:.9rem;color:var(--sub);margin-bottom:16px}
+        .sentiment-bar-wrap{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .sentiment-chip{padding:8px 20px;border-radius:12px;font-weight:700;font-size:.95rem}
+        .sentiment-chip.buy-c{background:var(--buy-bg);color:var(--buy)}
+        .sentiment-chip.sell-c{background:var(--sell-bg);color:var(--sell)}
+        .sentiment-chip.hold-c{background:var(--hold-bg);color:var(--hold)}
+        .verdict{margin-top:16px;font-size:1.15rem;font-weight:800;padding:10px 20px;border-radius:10px;display:inline-block}
+        .verdict.bullish{background:var(--buy-bg);color:var(--buy)}
+        .verdict.bearish{background:var(--sell-bg);color:var(--sell)}
+        .verdict.neutral{background:var(--hold-bg);color:var(--hold)}
+        .timeline-title{font-size:1rem;font-weight:700;color:var(--dark);margin:24px 0 12px;padding-left:8px;border-left:4px solid var(--buy)}
+        .tl-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden}
+        .tl-top{padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+        .tl-top.buy{border-left:4px solid var(--buy)}.tl-top.sell{border-left:4px solid var(--sell)}.tl-top.hold{border-left:4px solid var(--hold)}.tl-top.info{border-left:4px solid var(--info)}
+        .tl-dir{font-weight:800;font-size:.95rem}.tl-dir.buy{color:var(--buy)}.tl-dir.sell{color:var(--sell)}.tl-dir.hold{color:var(--hold)}.tl-dir.info{color:var(--info)}
+        .tl-date{font-size:.78rem;color:var(--light)}
+        .tl-role{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:8px;margin-left:6px}
+        .tl-role.primary{background:var(--buy-bg);color:var(--buy)}.tl-role.secondary{background:var(--info-bg);color:var(--sub)}
+        .tl-summary{padding:0 16px 12px;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.6}
+        .tl-detail{padding:0 16px 12px;font-size:.88rem;color:var(--sub);line-height:1.8}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <h1>📈 현대차</h1>
+            <a href="index.html" class="back-link">← 브리핑으로</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="overview">
+            <div class="stock-title">현대차</div>
+            <div class="mention-count">총 10회 언급 · 주역 8회</div>
+            <div class="sentiment-bar-wrap"><span class="sentiment-chip buy-c">📈 매수 7</span><span class="sentiment-chip hold-c">⏸️ 관망 1</span></div>
+            <div class="verdict bullish">📈 종합 판단: 매수 우세 (88%)</div>
+        </div>
+        <div class="timeline-title">📅 분석 타임라인</div>
+        
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-22 07:00</span>
+            </div>
+            <div class='tl-summary'>TCK는 불황에도 돈 버는 독점 기업, 지금은 저평가 구간!</div>
+            <div class='tl-detail'>TCK는 반도체 공장에 꼭 필요한 소모품을 사실상 혼자 다 파는 '동네 유일한 편의점' 같은 회사예요. 남들 적자 날 때도 혼자 30%씩 마진을 남길 정도로 힘이 세고, 앞으로 반도체 기술이 더 발전하면 물건이 더 많이 팔릴 수밖에 없어요. 지금 주가가 비싸 보일 수 있지만, 나중에 벌어들일 엄청난 돈을 생각하면 지금이 오히려 세일 기간입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-21 18:58</span>
+            </div>
+            <div class='tl-summary'>엔비디아는 꽉 잡고, 현대차는 폭락할 때 줍자</div>
+            <div class='tl-detail'>미국에서 세금을 돌려준다는 뉴스에 다들 좋아할 때, 우리는 그 밑에 숨겨진 '자동차 세금 25% 인상'이라는 독가시를 찾아낸 겁니다. 이 뉴스 때문에 겁먹은 사람들이 현대차를 막 팔기 시작하면 주가가 뚝 떨어질 텐데, 그때 우리는 남들보다 싸게 사면 됩니다. 엔비디아 같은 우량주는 세금 환급 기대감이 있으니 계속 들고 가시면 됩니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top hold">
+                <div>
+                    <span class="tl-dir hold">⏸️ 관망</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-21 18:26</span>
+            </div>
+            <div class='tl-summary'>빚더미 종목들 터지기 직전! 폭락하면 줍게 기다리세요</div>
+            <div class='tl-detail'>지금 잘 나가는 주식들은 남의 돈(빚) 빌려서 산 사람들이 너무 많아 풍선 근처에 바늘이 온 것과 같습니다. 풍선이 팍 터져서 가격이 뚝 떨어질 때, 우리는 미리 준비한 현금으로 시장에 버려진 좋은 주식들을 싸게 쇼핑할 준비를 해야 합니다. 지금은 섣불리 들어가지 말고 느긋하게 구경하며 때를 기다릴 때입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-21 18:26</span>
+            </div>
+            <div class='tl-summary'>우량주가 빚쟁이들 때문에 폭락할 때가 진짜 돈 벌 기회!</div>
+            <div class='tl-detail'>맛집(우량주)에 손님이 너무 많아 대기표(빚)가 꼬이면 한순간 소란이 생기죠. 이때 겁먹은 사람들이 음식을 버리고 도망가는데, 사실 음식 맛은 그대로거든요. 우리는 그 소란을 틈타 남들이 버린 귀한 음식을 싼값에 맛있게 먹으면(줍줍) 됩니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-21 09:57</span>
+            </div>
+            <div class='tl-summary'>엔비디아 성적표에 내 AI 주식들 운명 달렸다</div>
+            <div class='tl-detail'>우리 반 대장(엔비디아)이 시험을 보는데, 우리 애들(하이닉스 등)이 다 그 대장 밑에서 일하고 있어요. 대장이 성적 잘 받고 '앞으로 더 잘할게'라고 하면 우리 애들도 보너스 받지만, 대장이 조금이라도 삐끗하면 다 같이 기운 빠질 수 있습니다. 지금은 대장의 입에서 '710억 달러(약 95조 원) 넘게 벌 수 있다'는 확신이 나오느냐가 제일 중요합니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-21 09:26</span>
+            </div>
+            <div class='tl-summary'>가짜 꿈(바이오)에 속지 말고 진짜 돈 버는 반도체 꽉 잡으세요</div>
+            <div class='tl-detail'>바이오 주식은 '암 정복' 같은 멋진 꿈을 팔지만, 시험 결과 하나에 전 재산이 반토막 날 수 있는 무서운 복권 같아요. 반면 우리가 가진 하이닉스나 엔비디아는 실제로 물건을 팔아서 통장에 현금이 팍팍 꽂히는 '진짜 알부자' 가게들입니다. 남들이 도박할 때 우리는 마음 편하게 진짜 장사 잘하는 1등 기업들만 믿고 가면 된다는 뜻입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-21 07:19</span>
+            </div>
+            <div class='tl-summary'>트럼프 관세 폭탄 해제! 우리 주식들 대박 랠리 시작됩니다</div>
+            <div class='tl-detail'>쉽게 말해, 우리를 괴롭히던 '세금 폭탄'이라는 무서운 형님이 법원한테 혼나서 꼼짝 못 하게 된 상황입니다. 특히 현대차는 예전에 억울하게 냈던 세금을 돌려받게 되어 보너스가 생기고, 하이닉스나 엔비디아 같은 반도체 회사들은 물건 만드는 재료값이 싸져서 남는 돈이 많아집니다. 이제 막혔던 혈관이 뚫린 것처럼 기업들 주머니에 돈이 쌓일 테니, 우리는 느긋하게 주가가 오르는 걸 구경만 하면 되는 '골든 타임'입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-21 07:19</span>
+            </div>
+            <div class='tl-summary'>미국발 호재 폭발! 월요일 우리 주식 불기둥 올라옵니다</div>
+            <div class='tl-detail'>무서운 태풍(관세 리스크)이 지나가고 맑은 해가 떴습니다. 물가(PCE)가 조금 올랐지만, 동네 제일 부자 기업들(빅테크)이 돈을 너무 잘 벌어서 걱정할 수준이 아니에요. 이제 우리 시장의 대장주인 자동차와 반도체가 월요일에 신나게 달릴 준비를 마쳤으니 기분 좋게 기다리시면 됩니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-20 19:08</span>
+            </div>
+            <div class='tl-summary'>자사주 소각 법 통과! 현대차·TCK·TSE 대박 호재</div>
+            <div class='tl-detail'>회사가 자기 주식을 사서 불태워 없애버리는(소각) 법이 생겼습니다. 피자 한 판을 8명이 나눠 먹다가 2명이 안 먹겠다고 하면 내 몫이 커지는 것과 똑같습니다. 내가 가진 주식의 가치가 가만히 있어도 올라가고 배당금도 더 많이 받게 되는 '공짜 보너스'가 생긴 셈입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-19 11:00</span>
+            </div>
+            <div class='tl-summary'>외국인이 사주는 불장입니다, 팔지 말고 수익 즐기세요</div>
+            <div class='tl-detail'>지금 주식 시장은 마치 백화점 명품 세일 날에 큰손들이 몰려와서 물건을 싹쓸이하는 것과 같습니다. 반도체나 자동차 같은 좋은 주식들을 외국인들이 비싼 값에 사주고 있으니, 우리는 그냥 가만히 앉아서 구경만 해도 돈이 벌리는 상황이에요. 괜히 불안해서 중간에 팔지 말고, 오늘은 주식 앱 끄고 맛있는 거 드시면서 여유를 즐기시면 됩니다.</div>
+        </div>
+    </div>
+</body>
+</html>

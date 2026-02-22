@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📈 현대차2우B - 종목 분석</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg:#f8f7f4;--card:#fff;--buy:#1a73e8;--buy-bg:#e8f0fe;--sell:#d93025;--sell-bg:#fce8e6;--hold:#e67e22;--hold-bg:#fef7e0;--info:#6b7280;--info-bg:#f3f4f6;--dark:#1a1a1a;--body:#333;--sub:#666;--light:#999;--border:#e5e5e0;--radius:16px }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--body);line-height:1.75}
+        .header{background:#fff;border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+        .header-inner{max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+        .header h1{font-size:1.3rem;font-weight:800}
+        .back-link{color:var(--light);text-decoration:none;font-size:.85rem}
+        .container{max-width:720px;margin:0 auto;padding:20px 14px}
+        .overview{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:20px;text-align:center}
+        .stock-title{font-size:1.8rem;font-weight:900;color:var(--dark);margin-bottom:4px}
+        .mention-count{font-size:.9rem;color:var(--sub);margin-bottom:16px}
+        .sentiment-bar-wrap{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .sentiment-chip{padding:8px 20px;border-radius:12px;font-weight:700;font-size:.95rem}
+        .sentiment-chip.buy-c{background:var(--buy-bg);color:var(--buy)}
+        .sentiment-chip.sell-c{background:var(--sell-bg);color:var(--sell)}
+        .sentiment-chip.hold-c{background:var(--hold-bg);color:var(--hold)}
+        .verdict{margin-top:16px;font-size:1.15rem;font-weight:800;padding:10px 20px;border-radius:10px;display:inline-block}
+        .verdict.bullish{background:var(--buy-bg);color:var(--buy)}
+        .verdict.bearish{background:var(--sell-bg);color:var(--sell)}
+        .verdict.neutral{background:var(--hold-bg);color:var(--hold)}
+        .timeline-title{font-size:1rem;font-weight:700;color:var(--dark);margin:24px 0 12px;padding-left:8px;border-left:4px solid var(--buy)}
+        .tl-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden}
+        .tl-top{padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+        .tl-top.buy{border-left:4px solid var(--buy)}.tl-top.sell{border-left:4px solid var(--sell)}.tl-top.hold{border-left:4px solid var(--hold)}.tl-top.info{border-left:4px solid var(--info)}
+        .tl-dir{font-weight:800;font-size:.95rem}.tl-dir.buy{color:var(--buy)}.tl-dir.sell{color:var(--sell)}.tl-dir.hold{color:var(--hold)}.tl-dir.info{color:var(--info)}
+        .tl-date{font-size:.78rem;color:var(--light)}
+        .tl-role{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:8px;margin-left:6px}
+        .tl-role.primary{background:var(--buy-bg);color:var(--buy)}.tl-role.secondary{background:var(--info-bg);color:var(--sub)}
+        .tl-summary{padding:0 16px 12px;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.6}
+        .tl-detail{padding:0 16px 12px;font-size:.88rem;color:var(--sub);line-height:1.8}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <h1>📈 현대차2우B</h1>
+            <a href="index.html" class="back-link">← 브리핑으로</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="overview">
+            <div class="stock-title">현대차2우B</div>
+            <div class="mention-count">총 7회 언급 · 주역 1회</div>
+            <div class="sentiment-bar-wrap"><span class="sentiment-chip buy-c">📈 매수 1</span></div>
+            <div class="verdict bullish">📈 종합 판단: 매수 우세 (100%)</div>
+        </div>
+        <div class="timeline-title">📅 분석 타임라인</div>
+        
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-21 07:19</span>
+            </div>
+            <div class='tl-summary'>트럼프 관세 폭탄 해제! 우리 주식들 대박 랠리 시작됩니다</div>
+            <div class='tl-detail'>쉽게 말해, 우리를 괴롭히던 '세금 폭탄'이라는 무서운 형님이 법원한테 혼나서 꼼짝 못 하게 된 상황입니다. 특히 현대차는 예전에 억울하게 냈던 세금을 돌려받게 되어 보너스가 생기고, 하이닉스나 엔비디아 같은 반도체 회사들은 물건 만드는 재료값이 싸져서 남는 돈이 많아집니다. 이제 막혔던 혈관이 뚫린 것처럼 기업들 주머니에 돈이 쌓일 테니, 우리는 느긋하게 주가가 오르는 걸 구경만 하면 되는 '골든 타임'입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top buy">
+                <div>
+                    <span class="tl-dir buy">📈 매수 신호</span>
+                    <span class="tl-role primary">★ 주역</span>
+                </div>
+                <span class="tl-date">2026-02-20 19:08</span>
+            </div>
+            <div class='tl-summary'>자사주 소각 법 통과! 현대차·TCK·TSE 대박 호재</div>
+            <div class='tl-detail'>회사가 자기 주식을 사서 불태워 없애버리는(소각) 법이 생겼습니다. 피자 한 판을 8명이 나눠 먹다가 2명이 안 먹겠다고 하면 내 몫이 커지는 것과 똑같습니다. 내가 가진 주식의 가치가 가만히 있어도 올라가고 배당금도 더 많이 받게 되는 '공짜 보너스'가 생긴 셈입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 15:41</span>
+            </div>
+            <div class='tl-summary'>하이닉스로 큰 수익! 반도체 대장주가 답입니다</div>
+            <div class='tl-detail'>우량주 위주로 장바구니를 잘 채워둬서 통장이 빵빵해진 모습입니다. 특히 하이닉스와 ISC 같은 반도체 종목들이 돈을 아주 잘 벌어다 주고 있어요. 마이너스 난 종목이 거의 없을 정도로 아주 건강한 상태입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 13:41</span>
+            </div>
+            <div class='tl-summary'>SK하이닉스로 1,800만원 수익! 반도체가 정답입니다</div>
+            <div class='tl-detail'>튼튼한 1등 기업(SK하이닉스)이라는 나무를 심고 진득하게 기다렸더니 1,800만 원이라는 큰 열매가 열린 상황입니다. 중간에 팔지 않고 좋은 주식을 꽉 잡고 있는 것이 돈 버는 가장 쉬운 방법임을 보여줍니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 13:18</span>
+            </div>
+            <div class='tl-summary'>수익 난 하이닉스 팔아 알짜 주식 쇼핑 완료!</div>
+            <div class='tl-detail'>잘 나가는 큰 형님(하이닉스)이 번 돈으로, 실력은 좋은데 잠시 쉬고 있는 동생들(부품주) 옷을 사준 격입니다. 큰 형님은 여전히 든든하게 자리를 지키고 있고, 동생들은 이제 막 달릴 준비를 마쳤네요. 비쌀 때 팔고 쌀 때 사는 주식의 정석을 보여주는 아주 건강한 계좌입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 11:03</span>
+            </div>
+            <div class='tl-summary'>안 오르는 주식 팔고 대박 후보로 교체 완료!</div>
+            <div class='tl-detail'>정원에 시든 꽃(STI)은 뽑아버리고, 싱싱하고 튼튼한 새 꽃(TCK, TSE)을 심은 거예요. 이미 우리 마당에는 하이닉스라는 거대한 나무가 돈을 듬뿍 벌어다 주고 있죠. 이제 다음 주에 비(엔비디아 실적 발표)만 내리면 새로 심은 꽃들이 활짝 필 테니, 주말 동안은 걱정 말고 푹 쉬라는 뜻입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-19 12:50</span>
+            </div>
+            <div class='tl-summary'>반도체 대장주 하나만 잘 잡아도 계좌가 바뀝니다</div>
+            <div class='tl-detail'>동네에서 제일 장사 잘되는 1등 가게(SK하이닉스) 주식을 사서 가만히 놔뒀더니 돈이 복사가 됐습니다. 여기저기 조금씩 사는 것보다 확실한 놈 하나를 꽉 잡고 있는 게 비결이에요. 내 지갑이 30%나 빵빵해진 걸 보니 역시 반도체가 효자입니다.</div>
+        </div>
+    </div>
+</body>
+</html>

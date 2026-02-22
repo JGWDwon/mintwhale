@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📈 구글 - 종목 분석</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg:#f8f7f4;--card:#fff;--buy:#1a73e8;--buy-bg:#e8f0fe;--sell:#d93025;--sell-bg:#fce8e6;--hold:#e67e22;--hold-bg:#fef7e0;--info:#6b7280;--info-bg:#f3f4f6;--dark:#1a1a1a;--body:#333;--sub:#666;--light:#999;--border:#e5e5e0;--radius:16px }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--body);line-height:1.75}
+        .header{background:#fff;border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+        .header-inner{max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+        .header h1{font-size:1.3rem;font-weight:800}
+        .back-link{color:var(--light);text-decoration:none;font-size:.85rem}
+        .container{max-width:720px;margin:0 auto;padding:20px 14px}
+        .overview{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:20px;text-align:center}
+        .stock-title{font-size:1.8rem;font-weight:900;color:var(--dark);margin-bottom:4px}
+        .mention-count{font-size:.9rem;color:var(--sub);margin-bottom:16px}
+        .sentiment-bar-wrap{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .sentiment-chip{padding:8px 20px;border-radius:12px;font-weight:700;font-size:.95rem}
+        .sentiment-chip.buy-c{background:var(--buy-bg);color:var(--buy)}
+        .sentiment-chip.sell-c{background:var(--sell-bg);color:var(--sell)}
+        .sentiment-chip.hold-c{background:var(--hold-bg);color:var(--hold)}
+        .verdict{margin-top:16px;font-size:1.15rem;font-weight:800;padding:10px 20px;border-radius:10px;display:inline-block}
+        .verdict.bullish{background:var(--buy-bg);color:var(--buy)}
+        .verdict.bearish{background:var(--sell-bg);color:var(--sell)}
+        .verdict.neutral{background:var(--hold-bg);color:var(--hold)}
+        .timeline-title{font-size:1rem;font-weight:700;color:var(--dark);margin:24px 0 12px;padding-left:8px;border-left:4px solid var(--buy)}
+        .tl-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden}
+        .tl-top{padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+        .tl-top.buy{border-left:4px solid var(--buy)}.tl-top.sell{border-left:4px solid var(--sell)}.tl-top.hold{border-left:4px solid var(--hold)}.tl-top.info{border-left:4px solid var(--info)}
+        .tl-dir{font-weight:800;font-size:.95rem}.tl-dir.buy{color:var(--buy)}.tl-dir.sell{color:var(--sell)}.tl-dir.hold{color:var(--hold)}.tl-dir.info{color:var(--info)}
+        .tl-date{font-size:.78rem;color:var(--light)}
+        .tl-role{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:8px;margin-left:6px}
+        .tl-role.primary{background:var(--buy-bg);color:var(--buy)}.tl-role.secondary{background:var(--info-bg);color:var(--sub)}
+        .tl-summary{padding:0 16px 12px;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.6}
+        .tl-detail{padding:0 16px 12px;font-size:.88rem;color:var(--sub);line-height:1.8}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <h1>📈 구글</h1>
+            <a href="index.html" class="back-link">← 브리핑으로</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="overview">
+            <div class="stock-title">구글</div>
+            <div class="mention-count">총 15회 언급 · 주역 0회</div>
+            <div class="sentiment-bar-wrap"></div>
+            
+        </div>
+        <div class="timeline-title">📅 분석 타임라인</div>
+        
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-22 12:04</span>
+            </div>
+            <div class='tl-summary'>삼성보다 SK하이닉스·TSMC 연합이 HBM 시장의 진짜 승자</div>
+            <div class='tl-detail'>삼성전자가 '우리가 다 해줄게'라고 하지만, 정작 큰 손님(빅테크)들은 내 설계도를 경쟁자에게 주기 싫어해요. 게다가 하이닉스는 불량 없이 물건을 아주 잘 만드는데, 삼성은 아직 만드는 족족 불량이 많아 불안한 상태입니다. 결국 맛집(하이닉스)과 최고 주방장(TSMC)이 손잡은 팀에 손님이 몰릴 수밖에 없는 상황입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-21 19:46</span>
+            </div>
+            <div class='tl-summary'>AI 전력난 덕분에 반도체와 전력주가 돈벼락 맞습니다</div>
+            <div class='tl-detail'>맛집(AI)에 손님이 미친 듯이 몰리는데, 정작 요리할 가스(전기)가 부족한 상황입니다. 대기업들이 가스관을 새로 깔 시간이 없어서 기존 가스통을 비싼 돈 주고 통째로 사들이고 있어요. 결국 가스를 공급하는 회사와 요리 도구(반도체) 만드는 회사가 부르는 게 값인 시장이 된 겁니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-21 19:38</span>
+            </div>
+            <div class='tl-summary'>빅테크 싸움에 돈 버는 건 결국 SK하이닉스!</div>
+            <div class='tl-detail'>맛집(구글, 엔비디아)들이 서로 1등 하겠다고 피 터지게 싸우고 있는데, 정작 돈은 그 맛집들에 꼭 필요한 식재료(반도체)를 독점 공급하는 사장님(하이닉스)이 다 버는 상황입니다. 구글이 아무리 똑똑한 칩을 설계해도 결국 하이닉스의 메모리가 없으면 완성할 수 없거든요. 우리는 그냥 이 '핵심 부품주'만 꽉 잡고 있으면 됩니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-21 19:21</span>
+            </div>
+            <div class='tl-summary'>하이닉스, 2030년까지 물건 없어서 못 파는 '슈퍼 갑' 된다</div>
+            <div class='tl-detail'>맛있기로 소문난 빵집에 손님은 100명인데 빵은 30개밖에 안 나오는 상황입니다. 손님들이 웃돈을 줄 테니 제발 팔아달라고 줄을 서고 있는 게 지금 하이닉스의 모습이에요. 특히 안 팔리던 재고(낸드)까지 AI 열풍 덕에 없어서 못 파는 귀한 몸이 됐으니, 이 가게 주식은 그냥 믿고 들고 가시면 됩니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-21 18:38</span>
+            </div>
+            <div class='tl-summary'>빅테크가 돈 쏟아부을 때 엔비디아, 하이닉스 꽉 잡으세요</div>
+            <div class='tl-detail'>지금 대형 마트(구글, 마소)들이 서로 안 지려고 돈을 엄청 써서 가게를 고치고 있어요. 우리는 그 마트들에 공사 도구(반도체)와 전기(전력망)를 파는 사람이라 가만히 있어도 돈을 법니다. 마트 사장님들이 '이제 공사 그만하고 아끼자'라고 말하기 전까지는 계속 돈 벌 타이밍이니 걱정 마세요.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-21 11:45</span>
+            </div>
+            <div class='tl-summary'>못 오른 주식(네이버) 대신 진짜 대장주(반도체 소부장)를 잡으세요</div>
+            <div class='tl-detail'>식당 줄이 길다고 옆에 파리 날리는 집 가면 결국 후회합니다. 지금 주식시장도 줄 서서 기다리는 맛집(반도체)이 돈을 쓸어담고 있어요. 이름만 유명한 네이버보다, 반도체 만드는 데 꼭 필요한 '숨은 맛집' 같은 부품 회사들이 마진(남는 돈)도 훨씬 많고 주가도 잘 오릅니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-21 09:57</span>
+            </div>
+            <div class='tl-summary'>엔비디아 성적표에 내 AI 주식들 운명 달렸다</div>
+            <div class='tl-detail'>우리 반 대장(엔비디아)이 시험을 보는데, 우리 애들(하이닉스 등)이 다 그 대장 밑에서 일하고 있어요. 대장이 성적 잘 받고 '앞으로 더 잘할게'라고 하면 우리 애들도 보너스 받지만, 대장이 조금이라도 삐끗하면 다 같이 기운 빠질 수 있습니다. 지금은 대장의 입에서 '710억 달러(약 95조 원) 넘게 벌 수 있다'는 확신이 나오느냐가 제일 중요합니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-21 09:26</span>
+            </div>
+            <div class='tl-summary'>가짜 꿈(바이오)에 속지 말고 진짜 돈 버는 반도체 꽉 잡으세요</div>
+            <div class='tl-detail'>바이오 주식은 '암 정복' 같은 멋진 꿈을 팔지만, 시험 결과 하나에 전 재산이 반토막 날 수 있는 무서운 복권 같아요. 반면 우리가 가진 하이닉스나 엔비디아는 실제로 물건을 팔아서 통장에 현금이 팍팍 꽂히는 '진짜 알부자' 가게들입니다. 남들이 도박할 때 우리는 마음 편하게 진짜 장사 잘하는 1등 기업들만 믿고 가면 된다는 뜻입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-21 09:08</span>
+            </div>
+            <div class='tl-summary'>스마트폰은 AI 덕분에 돈을 더 잘 버는 '현금 복사기'입니다</div>
+            <div class='tl-detail'>요즘 핸드폰 안 바꾼다고 걱정하시죠? 그런데 이제는 폰 하나 팔 때 남는 마진이 예전보다 훨씬 커졌어요. 애플은 폰 판 뒤에도 매달 우리한테 서비스 이용료를 받아가고, 하이닉스는 AI 폰에 들어가는 비싼 부품을 독점하듯 팔고 있거든요. 결국 폰은 AI 시대의 가장 중요한 입구라서, 이 동네 대장주들은 앞으로도 돈을 쓸어담을 수밖에 없습니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-21 07:19</span>
+            </div>
+            <div class='tl-summary'>트럼프 관세 폭탄 해제! 우리 주식들 대박 랠리 시작됩니다</div>
+            <div class='tl-detail'>쉽게 말해, 우리를 괴롭히던 '세금 폭탄'이라는 무서운 형님이 법원한테 혼나서 꼼짝 못 하게 된 상황입니다. 특히 현대차는 예전에 억울하게 냈던 세금을 돌려받게 되어 보너스가 생기고, 하이닉스나 엔비디아 같은 반도체 회사들은 물건 만드는 재료값이 싸져서 남는 돈이 많아집니다. 이제 막혔던 혈관이 뚫린 것처럼 기업들 주머니에 돈이 쌓일 테니, 우리는 느긋하게 주가가 오르는 걸 구경만 하면 되는 '골든 타임'입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-21 07:19</span>
+            </div>
+            <div class='tl-summary'>미국발 호재 폭발! 월요일 우리 주식 불기둥 올라옵니다</div>
+            <div class='tl-detail'>무서운 태풍(관세 리스크)이 지나가고 맑은 해가 떴습니다. 물가(PCE)가 조금 올랐지만, 동네 제일 부자 기업들(빅테크)이 돈을 너무 잘 벌어서 걱정할 수준이 아니에요. 이제 우리 시장의 대장주인 자동차와 반도체가 월요일에 신나게 달릴 준비를 마쳤으니 기분 좋게 기다리시면 됩니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 15:20</span>
+            </div>
+            <div class='tl-summary'>미국 서민은 빚더미지만 엔비디아는 돈방석, 꽉 잡으세요!</div>
+            <div class='tl-detail'>동네 구멍가게(소비재)는 손님이 줄어 힘들지만, 전 세계 공장에 꼭 필요한 기계를 독점 공급하는 큰 회사(엔비디아)는 주문이 밀려 터져나가는 상황입니다. 부자들(기관 투자자)이 세상이 불안하니까 가장 튼튼하고 돈 잘 버는 이 회사로 돈을 다 옮기고 있어요. 우리 포트폴리오는 그 돈이 몰리는 길목을 잘 지키고 있으니 걱정할 필요 없습니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-20 07:41</span>
+            </div>
+            <div class='tl-summary'>월마트 실적 대박! 미국 경제 튼튼하니 주식 꽉 잡으세요</div>
+            <div class='tl-detail'>월마트는 미국 경제의 '건강검진 결과지' 같은 거예요. 이번에 보니 미국 사람들이 여전히 돈을 잘 쓰고 있고, 회사도 40조원어치나 자기 주식을 사겠다고 할 만큼 돈이 넘쳐납니다. 특히 마트가 이제 광고판까지 팔아서 돈을 더 많이 벌겠다고 하니, 우리 주식 시장 전체에 아주 좋은 신호등이 켜진 셈입니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-19 18:35</span>
+            </div>
+            <div class='tl-summary'>삼성 뉴스에 낚이지 말고, 하이닉스와 소부장 꽉 잡으세요!</div>
+            <div class='tl-detail'>삼성전자가 50조 들여서 공장 크게 짓는다는 뉴스가 떴지만, 이건 겉모습만 화려한 거예요. 진짜 돈을 버는 건 그 공장에 들어가는 소모품을 파는 회사들(TCK, TSE)이랑 이미 맛있는 반도체를 제일 잘 만드는 SK하이닉스입니다. 동네에 큰 식당 들어선다고 소문나서 손님 몰릴 때, 우리는 그 식당에 식재료 납품하는 가게랑 이미 맛집으로 소문난 옆집 주식을 들고 느긋하게 기다리면 됩니다.</div>
+        </div>
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-19 09:58</span>
+            </div>
+            <div class='tl-summary'>엔비디아와 하이닉스, 둘 중 뭐가 가도 수익 나는 꽃놀이패!</div>
+            <div class='tl-detail'>엔비디아라는 1등 선수가 잠시 숨을 고르는 중인데, 이건 실력이 없어서가 아니라 기대치가 너무 높아서 그래요. 그런데 이 선수가 숨 고르는 동안 운동화 공급하는 SK하이닉스는 돈을 엄청나게 벌고 있습니다. 결국 엔비디아가 다시 뛰든, 하이닉스가 계속 돈을 벌든 우리에겐 다 좋은 상황이니 걱정할 필요 없습니다.</div>
+        </div>
+    </div>
+</body>
+</html>
