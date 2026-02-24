@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📈 PSMC - 종목 분석</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg:#f8f7f4;--card:#fff;--buy:#1a73e8;--buy-bg:#e8f0fe;--sell:#d93025;--sell-bg:#fce8e6;--hold:#e67e22;--hold-bg:#fef7e0;--info:#6b7280;--info-bg:#f3f4f6;--dark:#1a1a1a;--body:#333;--sub:#666;--light:#999;--border:#e5e5e0;--radius:16px }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--body);line-height:1.75}
+        .header{background:#fff;border-bottom:1px solid var(--border);padding:16px 20px;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px rgba(0,0,0,.04)}
+        .header-inner{max-width:720px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+        .header h1{font-size:1.3rem;font-weight:800}
+        .back-link{color:var(--light);text-decoration:none;font-size:.85rem}
+        .container{max-width:720px;margin:0 auto;padding:20px 14px}
+        .overview{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:20px;text-align:center}
+        .stock-title{font-size:1.8rem;font-weight:900;color:var(--dark);margin-bottom:4px}
+        .mention-count{font-size:.9rem;color:var(--sub);margin-bottom:16px}
+        .sentiment-bar-wrap{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .sentiment-chip{padding:8px 20px;border-radius:12px;font-weight:700;font-size:.95rem}
+        .sentiment-chip.buy-c{background:var(--buy-bg);color:var(--buy)}
+        .sentiment-chip.sell-c{background:var(--sell-bg);color:var(--sell)}
+        .sentiment-chip.hold-c{background:var(--hold-bg);color:var(--hold)}
+        .verdict{margin-top:16px;font-size:1.15rem;font-weight:800;padding:10px 20px;border-radius:10px;display:inline-block}
+        .verdict.bullish{background:var(--buy-bg);color:var(--buy)}
+        .verdict.bearish{background:var(--sell-bg);color:var(--sell)}
+        .verdict.neutral{background:var(--hold-bg);color:var(--hold)}
+        .timeline-title{font-size:1rem;font-weight:700;color:var(--dark);margin:24px 0 12px;padding-left:8px;border-left:4px solid var(--buy)}
+        .tl-card{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden}
+        .tl-top{padding:12px 16px;display:flex;justify-content:space-between;align-items:center}
+        .tl-top.buy{border-left:4px solid var(--buy)}.tl-top.sell{border-left:4px solid var(--sell)}.tl-top.hold{border-left:4px solid var(--hold)}.tl-top.info{border-left:4px solid var(--info)}
+        .tl-dir{font-weight:800;font-size:.95rem}.tl-dir.buy{color:var(--buy)}.tl-dir.sell{color:var(--sell)}.tl-dir.hold{color:var(--hold)}.tl-dir.info{color:var(--info)}
+        .tl-date{font-size:.78rem;color:var(--light)}
+        .tl-role{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:8px;margin-left:6px}
+        .tl-role.primary{background:var(--buy-bg);color:var(--buy)}.tl-role.secondary{background:var(--info-bg);color:var(--sub)}
+        .tl-summary{padding:0 16px 12px;font-size:1.05rem;font-weight:700;color:var(--dark);line-height:1.6}
+        .tl-detail{padding:0 16px 12px;font-size:.88rem;color:var(--sub);line-height:1.8}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <h1>📈 PSMC</h1>
+            <a href="index.html" class="back-link">← 브리핑으로</a>
+        </div>
+    </header>
+    <div class="container">
+        <div class="overview">
+            <div class="stock-title">PSMC</div>
+            <div class="mention-count">총 1회 언급 · 주역 0회</div>
+            <div class="sentiment-bar-wrap"></div>
+            
+        </div>
+        <div class="timeline-title">📅 분석 타임라인</div>
+        
+        <div class="tl-card">
+            <div class="tl-top info">
+                <div>
+                    <span class="tl-dir info">📋 정보</span>
+                    <span class="tl-role secondary">조연</span>
+                </div>
+                <span class="tl-date">2026-02-24 14:37</span>
+            </div>
+            <div class='tl-summary'>먼 미래 뉴스에 속지 말고 하이닉스 꽉 잡으세요</div>
+            <div class='tl-detail'>옆집에서 5년 뒤에 기막힌 맛집을 차린다는 소문이 났다고 해서, 지금 줄 서서 먹는 1등 맛집 손님이 끊길까요? 2029년 기술은 아직 종이 위의 계획일 뿐, 지금 당장 돈을 벌어다 주는 건 하이닉스입니다. 복잡한 미래 걱정 대신 지금 제일 잘나가는 '대장주'에 집중해서 수익을 챙기는 것이 똑똑한 투자입니다.</div>
+        </div>
+    </div>
+</body>
+</html>
